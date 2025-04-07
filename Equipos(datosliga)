@@ -20,7 +20,7 @@ def leer_datos_csv(archivo):
     return datos
 
 # Uso del código
-archivo = 'liga.csv'  # Reemplaza con el nombre de tu archivo
+archivo = 'liga.csv' 
 datosliga = leer_datos_csv(archivo)
 
 # Obtener los equipos
