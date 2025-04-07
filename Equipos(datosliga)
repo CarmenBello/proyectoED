@@ -1,0 +1,28 @@
+import csv
+
+def Equipos(datosliga):
+    equipos = set()
+    # Recorrer todos los partidos en los datos
+    for liga in datosliga:
+        # Añadir los equipos al conjunto (set)
+        equipos.add(liga['Team 1'])
+        equipos.add(liga['Team 2'])
+    return equipos
+
+# Función para leer el CSV y convertirlo en una lista de diccionarios
+def leer_datos_csv(archivo):
+    datos = []
+    with open(archivo, newline='', encoding='utf-8') as csvfile:
+        reader = csv.DictReader(csvfile)
+        for row in reader:
+            # Convertir cada fila en un diccionario
+            datos.append(row)
+    return datos
+
+# Uso del código
+archivo = 'liga.csv'  # Reemplaza con el nombre de tu archivo
+datosliga = leer_datos_csv(archivo)
+
+# Obtener los equipos
+equipos = Equipos(datosliga)
+print(equipos)
